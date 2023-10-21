@@ -3,6 +3,8 @@
 ## Descrição
 A Comercinho API é uma aplicação Spring Boot que proporciona um sistema de gerenciamento básico para comerciantes. A aplicação expõe endpoints RESTful que permitem criar, buscar, listar e deletar registros de comerciantes.
 
+### Leia [CodeDoc](https://github.com/jcr04/Comercinho/blob/main/codedoc.md) para melhor entendimento técnico da aplicação
+
 ## Pré-requisitos
 - JDK 8 ou superior
 - Maven
