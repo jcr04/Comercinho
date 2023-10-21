@@ -2,6 +2,7 @@ package com.projetos.comercinho.domain.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.Objects;
@@ -13,10 +14,8 @@ public class Comerciante {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank(message = "O nome é obrigatório")
     private String nome;
 
-    @NotBlank(message = "O endereço é obrigatório")
     private String endereco;
 
 
