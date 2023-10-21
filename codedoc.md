@@ -32,6 +32,7 @@ public class ComercianteController {
 
 ## Endpoints
 a aplicação no momento tem esses endpoints:
+
 * - ![Screenshot_3](https://github.com/jcr04/Comercinho/assets/70778525/c91d09ea-f8f6-4222-8098-ad50ec0b3bf5)
 
 - rotas
