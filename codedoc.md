@@ -37,7 +37,7 @@ a aplicação no momento tem esses endpoints:
 
 - rotas
 - /api/comerciantes (POST): Criar Comerciante
-* - ![Screenshot_2](https://github.com/jcr04/Comercinho/assets/70778525/94051baf-2710-49b8-83d8-4a737e1ed59f)
+* - ![Screenshot_2](https://github.com/jcr04/Comercinho/assets/70778525/adbc61d5-fbe2-4f5f-bf12-9c7d033c7270)
 - /api/comerciantes (GET): Listar Comerciantes
 * - ![Screenshot_7](https://github.com/jcr04/Comercinho/assets/70778525/c801c3e5-73e6-4329-a34e-da9346262a19)
 - /api/comerciantes/{ID} (GET): Buscar Comerciante por ID
