@@ -33,13 +33,22 @@ public class ComercianteController {
 ## Endpoints
 a aplicação no momento tem esses endpoints:
 
-* - ![Screenshot_3](https://github.com/jcr04/Comercinho/assets/70778525/c91d09ea-f8f6-4222-8098-ad50ec0b3bf5)
+* - ![Screenshot_6](https://github.com/jcr04/Comercinho/assets/70778525/8eeaadec-9071-40e0-8366-b43b8b3fc814)
 
 - rotas
-/api/comerciantes (POST): Criar Comerciante
-* - ![Screenshot_6](https://github.com/jcr04/Comercinho/assets/70778525/fc98024d-4ff4-4477-829c-62cc7a790eab)
-/api/comerciantes (GET): Listar Comerciantes
-![Screenshot_7](https://github.com/jcr04/Comercinho/assets/70778525/c801c3e5-73e6-4329-a34e-da9346262a19)
+- /api/comerciantes (POST): Criar Comerciante
+* - ![Screenshot_2](https://github.com/jcr04/Comercinho/assets/70778525/94051baf-2710-49b8-83d8-4a737e1ed59f)
+- /api/comerciantes (GET): Listar Comerciantes
+* - ![Screenshot_7](https://github.com/jcr04/Comercinho/assets/70778525/c801c3e5-73e6-4329-a34e-da9346262a19)
+- /api/comerciantes/{ID} (GET): Buscar Comerciante por ID
+* - ![Screenshot_1](https://github.com/jcr04/Comercinho/assets/70778525/cf8ecbab-6088-45b8-93d1-5094faa1b345)
+- /api/comerciantes/{ID} (PUT) Atualizar Comerciante
+* - ![Screenshot_5](https://github.com/jcr04/Comercinho/assets/70778525/18d05164-78e1-4d74-8589-defb5c6f6eac)
+- /api/comerciantes/cidade/São%20José%20de%20Ribamar (GET): Buscar Comerciantes por Cidade
+* - ![Screenshot_3](https://github.com/jcr04/Comercinho/assets/70778525/1385e27b-7272-4f94-90c5-9f35db32438e)
+- /api/comerciantes/estado/MA (GET): Buscar Comerciantes por Estado
+* - ![Screenshot_4](https://github.com/jcr04/Comercinho/assets/70778525/6eee1574-5a0c-4268-8df3-33782e91330b)
+
 
 
 
