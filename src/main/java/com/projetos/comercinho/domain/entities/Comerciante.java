@@ -15,16 +15,28 @@ public class Comerciante {
     private Long id;
 
     private String nome;
-
     private String endereco;
+    private String cidade;  // Novo campo para a cidade
+    private String estado;  // Novo campo para o estado
+    private String telefone;  // Novo campo para o número de telefone
+    private String email;     // Novo campo para o e-mail
 
-
+    // Construtores
     public Comerciante() {
     }
 
     public Comerciante(String nome, String endereco) {
         this.nome = nome;
         this.endereco = endereco;
+    }
+
+    public Comerciante(String nome, String endereco, String cidade, String estado, String telefone, String email) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.telefone = telefone;
+        this.email = email;
     }
 
     // Getters e Setters
@@ -52,6 +64,38 @@ public class Comerciante {
         this.endereco = endereco;
     }
 
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -71,6 +115,10 @@ public class Comerciante {
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", endereco='" + endereco + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", estado='" + estado + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
