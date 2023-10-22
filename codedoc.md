@@ -33,9 +33,10 @@ public class ComercianteController {
 ## Endpoints
 a aplicação no momento tem esses endpoints:
 
-* - ![Screenshot_6](https://github.com/jcr04/Comercinho/assets/70778525/8eeaadec-9071-40e0-8366-b43b8b3fc814)
+* - ![Screenshot_4](https://github.com/jcr04/Comercinho/assets/70778525/1a541142-5109-4a4e-b521-33b78f38e722)
+### rotas
 
-- rotas
+#### Comerciantes
 - /api/comerciantes (POST): Criar Comerciante
 * - ![Screenshot_2](https://github.com/jcr04/Comercinho/assets/70778525/adbc61d5-fbe2-4f5f-bf12-9c7d033c7270)
 - /api/comerciantes (GET): Listar Comerciantes
@@ -49,7 +50,15 @@ a aplicação no momento tem esses endpoints:
 - /api/comerciantes/estado/MA (GET): Buscar Comerciantes por Estado
 * - ![Screenshot_4](https://github.com/jcr04/Comercinho/assets/70778525/6eee1574-5a0c-4268-8df3-33782e91330b)
 
+#### Produtos
+- /api/produtos (POST): Criar Produto
+* - ![Screenshot_1](https://github.com/jcr04/Comercinho/assets/70778525/1b89b0c1-9f15-4cc1-b69c-208c10119bfe)
+- /api/produtos/{id} (GET): Buscar Produtos
+* - ![Screenshot_2](https://github.com/jcr04/Comercinho/assets/70778525/bffb5b93-ce52-47b5-9644-b85ab3d0c479)
+- /api/produtos (GET): Listar Produtos
+* - ![Screenshot_3](https://github.com/jcr04/Comercinho/assets/70778525/b216582d-6e14-477a-9ccd-61c84f01bb96)
 
+aplicação rodar nesse LocalHost: 8081
 
 
 
