@@ -1,6 +1,6 @@
 # Documentação de Código da Comercinho API
 
-A Comercinho API é uma aplicação desenvolvida em Spring Boot, destinada a fornecer um sistema de gerenciamento básico para comerciantes. Este documento descreve os principais códigos e rotas presentes na aplicação.
+A Comercinho API é uma aplicação desenvolvida em Spring Boot, destinada a fornecer um sistema de gerenciamento básico para comerciantes e seus produtos. Este documento descreve os principais códigos e rotas presentes na aplicação.
 
 ## Estrutura do Projeto
 
@@ -16,6 +16,7 @@ O projeto segue a estrutura padrão de projetos Maven com Spring Boot:
 Esta classe é o controlador REST que expõe os endpoints relacionados aos comerciantes.
 
 ```java
+@RestController
 @RequestMapping("/api/comerciantes")
 public class ComercianteController {
 
@@ -29,7 +30,20 @@ public class ComercianteController {
     // ... métodos de endpoint
 }
 ```
+### ProdutoController
+Esta classe é o controlador REST que expõe os endpoints relacionados aos produtos.
 
+```java
+@RestController
+@RequestMapping("/api/produtos")
+public class ProdutoController {
+
+    @Autowired
+    private ProdutoService produtoService;
+
+    // ... métodos de endpoint
+}
+```
 ## Endpoints
 a aplicação no momento tem esses endpoints:
 
