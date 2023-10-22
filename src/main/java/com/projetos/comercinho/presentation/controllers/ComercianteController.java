@@ -52,8 +52,11 @@ public class ComercianteController {
     public ResponseEntity<Comerciante> atualizarComerciante(@PathVariable Long id, @RequestBody Comerciante comercianteAtualizado) {
         return comercianteService.buscarComerciante(id)
                 .map(comerciante -> {
+                    comerciante.setEndereco(comercianteAtualizado.getEndereco());
                     comerciante.setCidade(comercianteAtualizado.getCidade());
                     comerciante.setEstado(comercianteAtualizado.getEstado());
+                    comerciante.setTelefone(comercianteAtualizado.getTelefone());
+                    comerciante.setEmail(comercianteAtualizado.getEmail());
                     comercianteService.salvarComerciante(comerciante);
                     return new ResponseEntity<>(comerciante, HttpStatus.OK);
                 })
