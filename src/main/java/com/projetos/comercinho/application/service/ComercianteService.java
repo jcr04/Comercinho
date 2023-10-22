@@ -29,13 +29,15 @@ public class ComercianteService {
             throw new IllegalArgumentException("A cidade e o estado são obrigatórios");
         }
 
-        Optional<Comerciante> existente = buscarComerciantePorEmailOuTelefone(comerciante.getEmail(), comerciante.getTelefone());
-        if (existente.isPresent()) {
-            throw new DataIntegrityViolationException("Já existe um comerciante com o mesmo e-mail ou telefone");
+        if (comerciante.getId() == null) {
+            Optional<Comerciante> existente = buscarComerciantePorEmailOuTelefone(comerciante.getEmail(), comerciante.getTelefone());
+            if (existente.isPresent()) {
+                throw new DataIntegrityViolationException("Já existe um comerciante com o mesmo e-mail ou telefone");
+            }
         }
-
         return comercianteRepository.save(comerciante);
     }
+
 
     public Optional<Comerciante> buscarComerciante(Long id) {
         return comercianteRepository.findById(id);
