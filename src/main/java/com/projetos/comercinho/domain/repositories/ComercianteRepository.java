@@ -28,4 +28,6 @@ public interface ComercianteRepository extends JpaRepository<Comerciante, Long> 
 
     @Query("SELECT c FROM Comerciante c WHERE c.estado = :estado")
     List<Comerciante> findByEstado(@Param("estado") String estado);
+
+    Optional<Comerciante> findByNomeOrEmailOrTelefone(String nome, String email, String telefone);
 }

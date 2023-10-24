@@ -29,12 +29,11 @@ public class ComercianteService {
             throw new IllegalArgumentException("A cidade e o estado são obrigatórios");
         }
 
-        if (comerciante.getId() == null) {
-            Optional<Comerciante> existente = buscarComerciantePorEmailOuTelefone(comerciante.getEmail(), comerciante.getTelefone());
-            if (existente.isPresent()) {
-                throw new DataIntegrityViolationException("Já existe um comerciante com o mesmo e-mail ou telefone");
-            }
+        Optional<Comerciante> existente = buscarComerciantePorNomeEmailOuTelefone(comerciante.getNome(), comerciante.getEmail(), comerciante.getTelefone());
+        if (existente.isPresent() && !existente.get().getId().equals(comerciante.getId())) {
+            throw new DataIntegrityViolationException("Comerciante com dados inválidos, coloque dados diferentes");
         }
+
         return comercianteRepository.save(comerciante);
     }
 
@@ -66,6 +65,10 @@ public class ComercianteService {
 
     public Optional<Comerciante> buscarComercianteComProdutos(Long id) {
         return comercianteRepository.findById(id);
+    }
+
+    public Optional<Comerciante> buscarComerciantePorNomeEmailOuTelefone(String nome, String email, String telefone) {
+        return comercianteRepository.findByNomeOrEmailOrTelefone(nome, email, telefone);
     }
 
 }
