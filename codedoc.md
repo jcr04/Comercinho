@@ -47,7 +47,8 @@ public class ProdutoController {
 ## Endpoints
 a aplicação no momento tem esses endpoints:
 
-* - ![Screenshot_4](https://github.com/jcr04/Comercinho/assets/70778525/1a541142-5109-4a4e-b521-33b78f38e722)
+* - ![Screenshot_3](https://github.com/jcr04/Comercinho/assets/70778525/fdea7bd4-c808-4357-9aa8-de90eaff32d7)
+
 ### rotas
 
 #### Comerciantes
@@ -71,6 +72,12 @@ a aplicação no momento tem esses endpoints:
 * - ![Screenshot_2](https://github.com/jcr04/Comercinho/assets/70778525/bffb5b93-ce52-47b5-9644-b85ab3d0c479)
 - /api/produtos (GET): Listar Produtos
 * - ![Screenshot_3](https://github.com/jcr04/Comercinho/assets/70778525/b216582d-6e14-477a-9ccd-61c84f01bb96)
+
+#### Associação-produtos/comerciantes
+- /api/produtos/associar/{Id} (POST): Associar um Produto a um Comerciante
+* - ![Screenshot_1](https://github.com/jcr04/Comercinho/assets/70778525/2c6995ca-d136-4984-b09e-c4f312f702dc)
+- /api/comerciantes/{Id}/produtos (GET): Visualizar um Comerciante e seus Produtos
+* - ![Screenshot_2](https://github.com/jcr04/Comercinho/assets/70778525/bdffa601-3a7f-4672-ba8e-99724002d328)
 
 aplicação rodar nesse LocalHost: 8081
 
