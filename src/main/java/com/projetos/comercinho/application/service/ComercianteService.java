@@ -30,7 +30,7 @@ public class ComercianteService {
         }
 
         Optional<Comerciante> existente = buscarComerciantePorNomeEmailOuTelefone(comerciante.getNome(), comerciante.getEmail(), comerciante.getTelefone());
-        if (existente.isPresent() && !existente.get().getId().equals(comerciante.getId())) {
+        if (existente.isPresent() && (comerciante.getId() == null || !existente.get().getId().equals(comerciante.getId()))) {
             throw new DataIntegrityViolationException("Comerciante com dados inválidos, coloque dados diferentes");
         }
 
