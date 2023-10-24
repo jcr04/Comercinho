@@ -22,6 +22,12 @@ public class ProdutoController {
         return new ResponseEntity<>(novoProduto, HttpStatus.CREATED);
     }
 
+    @PostMapping("/associar/{comercianteId}")
+    public ResponseEntity<Produto> associarProduto(@PathVariable Long comercianteId, @RequestBody Produto produto) {
+        Produto produtoAssociado = produtoService.associarProdutoComerciante(comercianteId, produto);
+        return new ResponseEntity<>(produtoAssociado, HttpStatus.CREATED);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Produto> buscarProduto(@PathVariable Long id) {
         return produtoService.buscarProduto(id)

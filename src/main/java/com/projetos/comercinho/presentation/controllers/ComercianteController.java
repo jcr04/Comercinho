@@ -1,10 +1,11 @@
 package com.projetos.comercinho.presentation.controllers;
 
 import com.projetos.comercinho.application.service.ComercianteService;
+import com.projetos.comercinho.application.service.ProdutoService;
 import com.projetos.comercinho.domain.entities.Comerciante;
+import com.projetos.comercinho.domain.entities.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,10 +17,12 @@ import java.util.List;
 public class ComercianteController {
 
     private final ComercianteService comercianteService;
+    private final ProdutoService produtoService;
 
     @Autowired
-    public ComercianteController(ComercianteService comercianteService) {
+    public ComercianteController(ComercianteService comercianteService, ProdutoService produtoService) {  // Modifique esta linha
         this.comercianteService = comercianteService;
+        this.produtoService = produtoService;
     }
 
     @PostMapping
@@ -36,8 +39,8 @@ public class ComercianteController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<Comerciante>> listarComerciantes(Pageable pageable) {
-        Page<Comerciante> comerciantes = comercianteService.listarComerciantes(pageable);
+    public ResponseEntity<List<Comerciante>> listarComerciantes() {
+        List<Comerciante> comerciantes = comercianteService.listarComerciantes();
         return new ResponseEntity<>(comerciantes, HttpStatus.OK);
     }
 
@@ -73,6 +76,17 @@ public class ComercianteController {
     public ResponseEntity<List<Comerciante>> buscarComerciantesPorEstado(@PathVariable String estado) {
         List<Comerciante> comerciantes = comercianteService.buscarComerciantesPorEstado(estado);
         return new ResponseEntity<>(comerciantes, HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}/produtos")
+    public ResponseEntity<Comerciante> buscarComercianteEProdutos(@PathVariable Long id) {
+        return comercianteService.buscarComerciante(id)
+                .map(comerciante -> {
+                    List<Produto> produtos = produtoService.buscarProdutosPorComercianteId(id);
+                    comerciante.setProdutos(produtos);
+                    return new ResponseEntity<>(comerciante, HttpStatus.OK);
+                })
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
 }

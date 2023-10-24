@@ -1,10 +1,9 @@
 package com.projetos.comercinho.domain.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -16,10 +15,22 @@ public class Comerciante {
 
     private String nome;
     private String endereco;
-    private String cidade;  // Novo campo para a cidade
-    private String estado;  // Novo campo para o estado
-    private String telefone;  // Novo campo para o número de telefone
-    private String email;     // Novo campo para o e-mail
+    private String cidade;
+    private String estado;
+    private String telefone;
+    private String email;
+
+    @OneToMany(mappedBy = "comerciante")
+    @JsonManagedReference
+    private List<Produto> produtos;
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
 
     // Construtores
     public Comerciante() {

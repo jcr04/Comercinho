@@ -17,6 +17,8 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
     List<Produto> findByPrecoBetween(Double precoMinimo, Double precoMaximo);
 
+    List<Produto> findByComercianteId(Long comercianteId);
+
     @Query("SELECT p FROM Produto p WHERE p.quantidadeEmEstoque > :quantidadeMinima")
     List<Produto> encontrarProdutosComEstoqueAcima(@Param("quantidadeMinima") Integer quantidadeMinima);
 

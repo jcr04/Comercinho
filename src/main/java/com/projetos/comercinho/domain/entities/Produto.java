@@ -1,5 +1,6 @@
 package com.projetos.comercinho.domain.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -8,10 +9,24 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String nome;
     private String descricao;
-    private Double preco;
-    private Integer quantidadeEmEstoque;
+    private double preco;
+    private int quantidadeEmEstoque;
+
+    @ManyToOne
+    @JoinColumn(name = "comerciante_id")
+    @JsonBackReference
+    private Comerciante comerciante;
+
+    public Comerciante getComerciante() {
+        return comerciante;
+    }
+
+    public void setComerciante(Comerciante comerciante) {
+        this.comerciante = comerciante;
+    }
 
     // Getters e Setters
     public Long getId() {

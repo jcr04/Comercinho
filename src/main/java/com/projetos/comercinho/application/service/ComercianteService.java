@@ -47,9 +47,10 @@ public class ComercianteService {
         return comercianteRepository.findByEmailOrTelefone(email, telefone);
     }
 
-    public Page<Comerciante> listarComerciantes(Pageable pageable) {
-        return comercianteRepository.findAll(pageable);
+    public List<Comerciante> listarComerciantes() {
+        return comercianteRepository.findAll();
     }
+
 
     public void deletarComerciante(Long id) {
         comercianteRepository.deleteById(id);
@@ -61,6 +62,10 @@ public class ComercianteService {
 
     public List<Comerciante> buscarComerciantesPorEstado(String estado) {
         return comercianteRepository.findByEstado(estado);
+    }
+
+    public Optional<Comerciante> buscarComercianteComProdutos(Long id) {
+        return comercianteRepository.findById(id);
     }
 
 }
